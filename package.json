@@ -1,0 +1,31 @@
+{
+  "name": "micropub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dest/index.js",
+  "exports": {
+    ".": {
+      "default": "./dest/esm/index.js",
+      "import": "./dest/esm/index.js",
+      "require": "./dest/cjs/index.js"
+    },
+    "./result-ts": {
+      "default": "./dest/esm/result-ts.js",
+      "import": "./dest/esm/result-ts.js",
+      "require": "./dest/cjs/result-ts.js"
+    }
+  },
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc --outDir dest/esm && tsc --module commonjs --outDir dest/cjs",
+    "prepare": "npm run build"
+  },
+  "keywords": [],
+  "author": "ikasoba",
+  "license": "MIT",
+  "dependencies": {
+    "@ikasoba000/result-ts": "^1.0.1",
+    "typescript": "^5.0.4",
+    "vitest": "^0.30.1"
+  }
+}
